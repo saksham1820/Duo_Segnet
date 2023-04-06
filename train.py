@@ -1,4 +1,5 @@
 import argparse
+import pdb
 import os
 from datetime import datetime
 from distutils.dir_util import copy_tree
@@ -83,6 +84,7 @@ class Network(object):
         gt_root = self.cfg[opt.dataset]['mask_dir']
 
         self.logger.info("Split Percentage : {} Labeled Data Ratio : {}".format(opt.split, opt.ratio))
+        #pdb.set_trace()
         train_loader_1, train_loader_2, unlabeled_train_loader, val_loader = image_loader(image_root, gt_root,
                                                                                           opt.batchsize, opt.trainsize,
                                                                                           opt.split, opt.ratio)
